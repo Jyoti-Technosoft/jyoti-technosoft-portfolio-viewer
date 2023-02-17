@@ -1,0 +1,22 @@
+.stepper {
+    .text-height {
+        font-size: 20px;
+    }
+
+    .MuiMobileStepper-dot {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+
+.align-item-center{
+    margin: auto;
+}
+
+
+.grid-card:hover {
+    box-shadow: 1px 8px 20px grey;
+    -webkit-transition:  box-shadow .6s ease-in;
+    cursor: pointer;
+}
