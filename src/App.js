@@ -1,13 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AppLayout from './components/AppLayout';
-function App() {
+import { connect } from "react-redux";
+import { mapStateToProps, mapDispatchToProps }from './store/mapPropsToState';
+
+
+function App(props) {
   return (
     <div className="App">
         <AppLayout/>
     </div>
   );
 }
-
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);

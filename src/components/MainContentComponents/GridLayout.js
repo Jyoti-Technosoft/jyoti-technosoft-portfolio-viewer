@@ -27,26 +27,34 @@ function FormRow() {
       <Grid item xs="auto">
         <Cards/>
       </Grid>
-      <Grid item xs="auto">
+      {/* <Grid item xs="auto">
         <Cards/>
-      </Grid>
+      </Grid> */}
     </React.Fragment>
   );
 }
 
-function GridLayout() {
+function GridLayout(props) {
+
+  const [projectItem, setProjectItem] = React.useState([]);
+
+  React.useEffect(() => {
+    loadProjects(props.language); 
+  }, [props.projectItem, props.language]);
+
+  const loadProjects = (language) => {
+    const projects = props.projectItem.filter((project) => (project.language == language || language == 'all'));
+    setProjectItem(projects)
+  }
+
   return (
     <Box sx={{ flexGrow: 1, margin: '10px 0px 0px 8px', }}>
-      <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid container item spacing={4}>
-          <FormRow />
-        </Grid>
-        <Grid container item spacing={4}>
-          <FormRow />
-        </Grid>
-        <Grid container item spacing={4}>
-          <FormRow />
-        </Grid>
+      <Grid container spacing={{ xs: 2, md: 4 }} columns={{ xs: 2, sm: 8, md: 12 }}>
+        { projectItem.map((pdetails, index) => (
+          <Grid item xs={2} sm={4} md={4} key={index}>
+            <Cards projectData={pdetails} />
+          </Grid>
+        ))}
       </Grid>
     </Box>
   );

@@ -1,0 +1,119 @@
+{
+    "ProgrammingLanguage": [
+        { "name": "all", "label": "All" },
+        { "name": "angular", "label": "Angular" },
+        { "name": "react", "label": "React" },
+        { "name": "java", "label": "Java" }
+    ],
+    "Projects": [
+        { "projectName": "ProgressMaker",
+          "description": "A project description is a high-level overview of why you A project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why you",
+           "libraries":
+           [
+            "ngrx", "rxjs", "ngxs", "D3.js", "bootstrap", "primeng", "synfusion", "jsonApiModal"
+           ],
+           "backend": "Laravel",
+           "database": "mySql",
+           "images": [
+                {
+                    "label": "Execution Element Dashboard",
+                    "imgPath": "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60"
+                },
+                {
+                    "label": "Performance Dashboard",
+                    "imgPath": "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60"
+                },
+                {
+                    "label": "Grid Card section",
+                    "imgPath": "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60"
+                }
+           ],
+           "language": "angular",
+           "websiteRefenceLink": "https://dev-wo.progressmaker.de" 
+        },
+        { 
+            "projectName": "PA2",
+            "description": "",
+            "libraries":
+            [
+            "ngrx", "rxjs", "ngxs", "Angular chart js", "primeng", "jsonApiModal"
+            ],
+            "backend": "Nodejs",
+            "database" : "mongoDB",
+            "images": [
+                "",
+                "",
+                ""
+            ],
+            "language": "angular",
+            "websiteRefenceLink": "" 
+        },
+        { 
+            "projectName": "Enteros",
+            "description": "",
+            "libraries":
+            [
+             ""
+            ],
+            "backend": "Nodejs",
+            "database" : "mongoDB",
+            "images": [
+                "",
+                "",
+                ""
+            ],
+            "language": "java",
+            "websiteRefenceLink": "" 
+        },
+        { 
+            "projectName": "PropertyVista",
+            "description": "",
+            "libraries":
+            [
+            ""
+            ],
+            "backend": "Nodejs",
+            "database" : "mongoDB",
+            "images": [
+                "",
+                "",
+                ""
+            ],
+            "language": "java",
+            "websiteRefenceLink": "" 
+        },
+        {
+            "projectName": "Jyoti Technosoft", 
+            "description": "",
+            "libraries": 
+            [
+            ""
+            ],
+            "database" : "mongoDB",
+            "images": [
+                "",
+                "",
+                ""
+            ],
+            "language": "angular" ,
+            "websiteRefenceLink": "" 
+        },
+        {
+            "projectName": "Jyoti Technosoft Consultant",              
+            "description": "",
+            "libraries": 
+            [
+                "rxjs", "ngxs", "Angular chart js", "primeng", "jsonApiModal"
+            ],
+            "database" : "mongoDB",
+            "images": [
+                "",
+                "",
+                ""
+            ],
+            "language": "angular" ,
+            "websiteRefenceLink": ""
+        }
+    ]
+ }
+ 

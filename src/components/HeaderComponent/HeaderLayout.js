@@ -37,7 +37,7 @@ function HeaderBar(props) {
 
 
   const toogleSideBar = () => {
-    props.toogleSideBar(!props.toogleState)
+    props.handleListItemClick(props.sidebar)
   }
 
   return (

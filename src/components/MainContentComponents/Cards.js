@@ -5,10 +5,33 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useNavigate } from "react-router-dom";
+import { connect } from "react-redux";
+import { mapStateToProps, mapDispatchToProps }from '../../store/mapPropsToState';
 
-function Cards() {
+function Cards(props) {
+  console.log(props)
+ 
+  const navigate = useNavigate();
+  
+  const [pdetails, setProjdetails] = React.useState(props.projectData);
+
+  React.useEffect(() => {
+    setProjdetails(props.projectData);
+  }, [props.projectData])
+
+  const handleNext = (pdetails) => {
+    console.log(pdetails)
+    props.setSelectedProjectAction(pdetails);
+    navigate(`${pdetails?.projectName}`);
+  };
+
+  const openWebsites = (websiteRef) => {
+    window.open(websiteRef, '_blank', 'noreferrer');
+  }
+
   return (
-    <Card sx={{ maxWidth: 430 }} className="grid-card">
+    <Card sx={{ maxWidth: 430 }} className="grid-card" onClick={ () => { handleNext(pdetails) } } >
       <CardMedia
         sx={{ height: 250 }}
         image="https://picsum.photos/seed/picsum/200/300"
@@ -16,19 +39,18 @@ function Cards() {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Biztree
+          { pdetails?.projectName }
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          { pdetails?.description }
         </Typography>
       </CardContent>
       <CardActions>
         <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small" onClick={ () => { openWebsites(pdetails?.websiteRefenceLink)}}>Visit site</Button>
       </CardActions>
     </Card>
   );
 }
 
-export default Cards 
+export default connect(mapStateToProps, mapDispatchToProps)(Cards) 
