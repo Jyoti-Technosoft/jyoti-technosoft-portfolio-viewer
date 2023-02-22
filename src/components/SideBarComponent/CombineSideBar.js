@@ -16,12 +16,14 @@ import HeaderBar from "../HeaderComponent/HeaderLayout"
 import Carousel from "../MainContentComponents/Carousel"
 import { useNavigate } from "react-router-dom";
 import { Routes, Route, Outlet, BrowserRouter } from 'react-router-dom';
-import {useParams} from 'react-router-dom';
+import {useParams, useLocation} from 'react-router-dom';
 import portfolioData from "./portfolio.json";
+import { connect } from "react-redux";
+import { mapStateToProps, mapDispatchToProps }from '../../store/mapPropsToState';
 
 const drawerWidth = 240;
-function CombineSideBar() {
-
+function CombineSideBar(props) {
+  
   const [appData, setAppData] = React.useState(portfolioData);
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const [open, setOpen] = React.useState(true);
@@ -38,6 +40,10 @@ function CombineSideBar() {
   React.useEffect(() => {
     navigate(`/${selectedLang}`);
   },[selectedLang])
+
+  React.useEffect(() => {
+    props.setProjectListAction(appData?.Projects);
+  },[appData])
 
   const navigate = useNavigate();
 
@@ -84,4 +90,4 @@ function CombineSideBar() {
 }
 
 
-export default CombineSideBar
+export default connect(mapStateToProps, mapDispatchToProps)(CombineSideBar)

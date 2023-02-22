@@ -9,3 +9,10 @@ export const setSelectedProjectAction = (payload) => {
         payload: payload 
     }
 };
+
+export const setProjectListAction = (payload) => {
+    return {
+        type: "SET_PROJECT_LIST",
+        payload: payload 
+    }
+};

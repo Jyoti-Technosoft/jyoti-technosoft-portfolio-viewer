@@ -13,6 +13,8 @@ import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps }from '../../store/mapPropsToState';
+import {useParams, useLocation} from 'react-router-dom';
+
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -40,19 +42,30 @@ const images = [
 ];
 
 function Carousel(props) {
+  const { projectName } = useParams();
   const [ selectedProject, setSelectedProject ] = React.useState();
   const [ activeStep, setActiveStep ] = React.useState(0);
   const theme = useTheme();
   const maxSteps = props?.selectedProject?.images.length;
-
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
 
   React.useEffect(() => {
-    setSelectedProject(props.selectedProject);
+  const data = props.selectedProject
+    setSelectedProject(data);
   },[props.selectedProject]);
+
+  React.useEffect(() => {
+    if (projectName != selectedProject?.projectName) {
+      const data = props?.projectList?.find((item) => item?.projectName === projectName);
+      if (data) {
+        setSelectedProject(data);
+      }
+    }
+  },[props.projectList]);
+
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);

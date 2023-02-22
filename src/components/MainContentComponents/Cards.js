@@ -10,8 +10,6 @@ import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps }from '../../store/mapPropsToState';
 
 function Cards(props) {
-  console.log(props)
- 
   const navigate = useNavigate();
   
   const [pdetails, setProjdetails] = React.useState(props.projectData);
@@ -21,7 +19,6 @@ function Cards(props) {
   }, [props.projectData])
 
   const handleNext = (pdetails) => {
-    console.log(pdetails)
     props.setSelectedProjectAction(pdetails);
     navigate(`${pdetails?.projectName}`);
   };

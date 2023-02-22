@@ -8,6 +8,10 @@ export default (state, action) => {
             return {
                 selectedProject: action.payload
             };
+        case "SET_PROJECT_LIST":    
+            return {
+                projectList: action.payload
+            }
       default:
         return state;
     }
