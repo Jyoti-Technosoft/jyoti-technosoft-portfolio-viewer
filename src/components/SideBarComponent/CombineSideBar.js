@@ -28,14 +28,23 @@ function CombineSideBar(props) {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const [open, setOpen] = React.useState(true);
   const { projectName } = useParams();
-  const path = projectName ? projectName : appData.ProgrammingLanguage[0].name;
-  const [selectedLang, setSelectedLang] = React.useState(path);
+  const location = useLocation();
+  const path = appData.ProgrammingLanguage.find(lang => lang?.name === location.pathname.split('/')[1])?.name;
+  const selectedPath = path ? path : appData.ProgrammingLanguage[0].name;
+  const [selectedLang, setSelectedLang] = React.useState(selectedPath);
 
   const handleListItemClick = (name, index) => {
     setSelectedIndex(index);
     setSelectedLang(name);
     navigate(`/${name}`);
   };
+
+  React.useEffect(() => {
+    const index = appData.ProgrammingLanguage.findIndex(lang => lang?.name === location.pathname.split('/')[1]);
+    if (index > -1) {
+      setSelectedIndex(index);
+    } 
+  },[selectedIndex])
 
   React.useEffect(() => {
     navigate(`/${selectedLang}`);
