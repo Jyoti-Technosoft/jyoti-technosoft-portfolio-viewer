@@ -24,7 +24,8 @@ function Cards(props) {
     navigate(`${pdetails?.projectName}`);
   };
 
-  const openWebsites = (websiteRef) => {
+  const openWebsites = (event, websiteRef) => {
+    event.stopPropagation();
     window.open(websiteRef, '_blank', 'noreferrer');
   }
 
@@ -39,14 +40,14 @@ function Cards(props) {
         <Typography gutterBottom variant="h5" component="div">
           { pdetails?.projectName }
         </Typography>
-        <Typography variant="body2" color="text.primary">
+        <Typography className="align-text" variant="body2" color="text.primary">
           { pdetails?.description }
         </Typography>
       </CardContent>
       <CustomBadge libraries={pdetails?.libraries} cssClass={'card-view'} />
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small" onClick={ () => { openWebsites(pdetails?.websiteRefenceLink)}}>Visit site</Button>
+        <Button size="small" onClick={ (event) => { event.stopPropagation(); }}>Share</Button>
+        <Button size="small" onClick={ (event) => { openWebsites(event, pdetails?.websiteRefenceLink)}}>Visit site</Button>
       </CardActions>
     </Card>
   );

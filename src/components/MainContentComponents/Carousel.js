@@ -15,36 +15,16 @@ import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps }from '../../store/mapPropsToState';
 import {useParams, useLocation} from 'react-router-dom';
 import CustomBadge from './CustomBadge';
+import ImageListItemBar from '@mui/material/ImageListItemBar';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-const images = [
-  {
-    label: 'San Francisco – Oakland Bay Bridge, United States',
-    imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
-  },
-  {
-    label: 'Bird',
-    imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
-  },
-  {
-    label: 'Bali, Indonesia',
-    imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250',
-  },
-  {
-    label: 'Goč, Serbia',
-    imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
-  },
-];
 
 function Carousel(props) {
   const { projectName } = useParams();
   const [ selectedProject, setSelectedProject ] = React.useState();
   const [ activeStep, setActiveStep ] = React.useState(0);
+  const [ images, setImages ] = React.useState([]);
   const theme = useTheme();
   const maxSteps = props?.selectedProject?.images.length;
   const handleNext = () => {
@@ -55,6 +35,7 @@ function Carousel(props) {
   React.useEffect(() => {
   const data = props.selectedProject
     setSelectedProject(data);
+    setImages(data?.images)
   },[props.selectedProject]);
 
   React.useEffect(() => {
@@ -89,7 +70,7 @@ function Carousel(props) {
             bgcolor: 'background.default',
           }}
         >
-          <Typography className='custom-header'>{ selectedProject?.images[activeStep]?.label }</Typography>
+          <Typography className='custom-header'>{ selectedProject?.projectName }</Typography>
         </Paper>
         <AutoPlaySwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -100,18 +81,29 @@ function Carousel(props) {
           {images.map((step, index) => (
             <div key={step.label}>
               {Math.abs(activeStep - index) <= 2 ? (
-                <Box
-                  component="img"
+                <>
+                  <ImageListItemBar
                   sx={{
-                    height: 450,
-                    display: 'block',
-                    maxWidth: '100%',
-                    overflow: 'hidden',
-                    width: '100%',
-                  }}
-                  src={step.imgPath}
-                  alt={step.label}
-                />
+                    backgroundColor: '#98b2b7',
+                      // 'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
+                      // 'rgba(97, 130, 138, 1) 70%, rgba(97, 160, 140, 1) 100%)',
+                    position:'relative'
+                    }}
+                    title={step.label}
+                    position="top"
+                    actionPosition="left"
+                  />
+                  <Box component="img" sx={{
+                      height: 450,
+                      display: 'block',
+                      maxWidth: '100%',
+                      overflow: 'hidden',
+                      width: '100%',
+                    }}
+                    src={step.imgPath}
+                    alt={step.label}
+                  />
+                </>
               ) : null}
             </div>
           ))}

@@ -9,8 +9,6 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import GridLayout from '../MainContentComponents/GridLayout'
 import HeaderBar from "../HeaderComponent/HeaderLayout"
 import Carousel from "../MainContentComponents/Carousel"
@@ -86,7 +84,7 @@ function CombineSideBar(props) {
           </List>
         </Box>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3, maxWidth: `100%`, }}>
+      <Box className="main-container" component="main" sx={{ flexGrow: 1, p: 3, maxWidth: `100%`,}}>
         <Toolbar />
           <Routes>
               <Route exact path={selectedLang} element={<GridLayout  language = {selectedLang}  projectItem = {appData.Projects} />} />

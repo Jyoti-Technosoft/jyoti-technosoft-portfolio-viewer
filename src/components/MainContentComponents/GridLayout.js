@@ -5,7 +5,7 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Cards from "./Cards";
 import "./MainContent.scss"
-
+import Button from '@mui/material/Button';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -15,24 +15,6 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-function FormRow() {
-  return (
-    <React.Fragment>
-      <Grid item xs="auto">
-        <Cards/>
-      </Grid>
-      <Grid item xs="auto">
-        <Cards/>
-      </Grid>
-      <Grid item xs="auto">
-        <Cards/>
-      </Grid>
-      {/* <Grid item xs="auto">
-        <Cards/>
-      </Grid> */}
-    </React.Fragment>
-  );
-}
 
 function GridLayout(props) {
 
@@ -43,7 +25,16 @@ function GridLayout(props) {
   }, [props.projectItem, props.language]);
 
   const loadProjects = (language) => {
-    const projects = props.projectItem.filter((project) => (project.language == language || language == 'all'));
+    let projects = props.projectItem.filter((project) => (project.language == language || language == 'all'));
+    if (projects?.length > 6) {
+      projects = projects.slice(0, 6);
+    }
+    setProjectItem(projects)
+  }
+  
+  const loadMoreProject = (vissibleProjectIndex, language) =>  {
+    let projects = props.projectItem.filter((project) => (project.language == language || props.language == 'all'));
+    projects = projects.slice(0, (vissibleProjectIndex+6));
     setProjectItem(projects)
   }
 
@@ -56,6 +47,15 @@ function GridLayout(props) {
           </Grid>
         ))}
       </Grid>
+      <div>
+         { projectItem.length < props?.projectItem?.length ? 
+            <div className='load-button'>
+              <Button variant="text" onClick={ () => { loadMoreProject(projectItem?.length, projectItem?.language) }}>load more</Button>
+            </div> 
+            : <></>
+         }
+      </div>
+
     </Box>
   );
 }

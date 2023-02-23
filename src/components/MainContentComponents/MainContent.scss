@@ -88,3 +88,42 @@ main {
     min-height: 100px !important;
     max-height: 100px !important;
 }
+
+
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+
+::-webkit-scrollbar {
+    width: 0.7rem;
+}
+  
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #DFE9EB; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ABC3CD; 
+}
+
+.main-container {
+    min-height: 100vh;
+}
+
+.align-text {
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.load-button {
+    margin-top: 10px;
+}
