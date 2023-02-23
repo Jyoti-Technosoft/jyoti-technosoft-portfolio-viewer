@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps }from '../../store/mapPropsToState';
+import CustomBadge  from './CustomBadge'
 
 function Cards(props) {
   const navigate = useNavigate();
@@ -28,20 +29,21 @@ function Cards(props) {
   }
 
   return (
-    <Card sx={{ maxWidth: 430 }} className="grid-card" onClick={ () => { handleNext(pdetails) } } >
+    <Card sx={{ maxWidth: 430, minHeight: 500, maxHeight:500 }} className="grid-card" onClick={ () => { handleNext(pdetails) } } >
       <CardMedia
         sx={{ height: 250 }}
         image="https://picsum.photos/seed/picsum/200/300"
         title="green iguana"
       />
-      <CardContent>
+      <CardContent sx={{ maxWidth: 430, minHeight: 140, maxHeight:140 }}>
         <Typography gutterBottom variant="h5" component="div">
           { pdetails?.projectName }
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.primary">
           { pdetails?.description }
         </Typography>
       </CardContent>
+      <CustomBadge libraries={pdetails?.libraries} cssClass={'card-view'} />
       <CardActions>
         <Button size="small">Share</Button>
         <Button size="small" onClick={ () => { openWebsites(pdetails?.websiteRefenceLink)}}>Visit site</Button>

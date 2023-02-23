@@ -1,0 +1,57 @@
+.Mui-selected {
+    background-color: #ABC3CD !important;
+    color: white !important;
+    // box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 
+    //             0px 4px 5px 0px rgb(0 0 0 / 14%), 
+    //             0px 1px 10px 0px rgb(0 0 0 / 12%);
+}
+
+.MuiDrawer-paper {
+    background-color: #DFE9EB !important;
+    .MuiBox-root {
+        .MuiList-root {
+            padding-top: 0px !important;
+        }
+    }
+}
+
+.container-description {
+    text-align: left;
+}
+
+.carousel-view {
+    position: relative;
+    top: 14px;
+    padding: 12px 30px;
+
+    .MuiBadge-badge {
+        position: relative;
+        font-size: 16px;
+        height: 2.6rem;
+        margin-right: 14px;
+        padding-right: -2px;
+        background-color: #FB2576;
+        color: greenyellow;
+        padding: 20px;
+    }
+}
+
+.card-view {
+    display: grid !important;
+    grid-template-columns: auto auto auto auto;
+    gap: 14px;
+    padding: 12px;
+    padding-left: 12 !important;
+    padding-right: 9px !important;
+    .set-background {
+        background-color: #A9CCCF;
+        margin: 0px 1px;
+        border-radius: 12px;
+        box-shadow: none !important;
+        color: azure;
+        font-weight: 50;
+        font-size: 14px;
+        padding: 5px !important;
+        height: 2rem;
+    }
+}

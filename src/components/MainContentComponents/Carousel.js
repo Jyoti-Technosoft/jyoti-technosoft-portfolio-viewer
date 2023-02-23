@@ -14,7 +14,7 @@ import Container from '@mui/material/Container';
 import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps }from '../../store/mapPropsToState';
 import {useParams, useLocation} from 'react-router-dom';
-
+import CustomBadge from './CustomBadge';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -149,16 +149,8 @@ function Carousel(props) {
             </Button>
           }
         />
-      <Container sx={{ maxWidth: '80%', flexGrow: 1 }} className='badge-alignment'>
-      { 
-        selectedProject?.libraries?.map((item, index) => {
-          return <div>
-            <Badge maxWidth="auto" badgeContent={item} color="primary" variant='standard'></Badge>
-          </div>
-        })
-      }
-      </Container>
-      <Container sx={{ maxWidth: '80%', flexGrow: 1 }}>
+      <CustomBadge libraries={selectedProject?.libraries} cssClass={'carousel-view'}/>
+      <Container className="container-description" sx={{ maxWidth: '80%', flexGrow: 1 }}>
         { selectedProject?.description }
       </Container>
       </Box>

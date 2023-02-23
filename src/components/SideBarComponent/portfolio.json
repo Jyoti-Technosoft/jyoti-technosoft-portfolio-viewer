@@ -1,9 +1,9 @@
 {
     "ProgrammingLanguage": [
-        { "name": "all", "label": "All" },
-        { "name": "angular", "label": "Angular" },
-        { "name": "react", "label": "React" },
-        { "name": "java", "label": "Java" }
+        { "name": "all", "label": "All", "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*wcEYa9AjnMZxXAau2iuhYw.png" },
+        { "name": "angular", "label": "Angular", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnTajaA4PBvJTBjq8D1QmytIA6lMpSh_KIMAQdavH_-g&s" },
+        { "name": "react", "label": "React", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy81xKzdvWHqMQ0s4mzwYx6TxetMYC4igaSMJf2L-UkA&s" },
+        { "name": "java", "label": "Java", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2rReFDCklTqsuHHTQ6bTsVZ7ZeeOL64GZ-fpaGbZihA&s" }
     ],
     "Projects": [
         { "projectName": "ProgressMaker",
@@ -53,7 +53,6 @@
             "description": "",
             "libraries":
             [
-             ""
             ],
             "backend": "Nodejs",
             "database" : "mongoDB",
@@ -70,7 +69,7 @@
             "description": "",
             "libraries":
             [
-            ""
+           
             ],
             "backend": "Nodejs",
             "database" : "mongoDB",
@@ -87,7 +86,7 @@
             "description": "",
             "libraries": 
             [
-            ""
+          
             ],
             "database" : "mongoDB",
             "images": [

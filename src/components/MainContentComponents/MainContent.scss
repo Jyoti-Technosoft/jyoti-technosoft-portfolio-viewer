@@ -12,9 +12,10 @@
 
 .align-item-center{
     margin: auto;
+    background-color: white;
 }
 
-.badge-alignment {
+.carousel-view {
     .MuiBadge-badge {
         position: relative;
         font-size: 16px;
@@ -24,15 +25,25 @@
     }
 }
 
-.badge-alignment {
+.carousel-view {
     display: flex !important;
     flex-direction: row;
     margin: 0px !important;
 }
 
 
+.container-description {    
+    padding: 20px 10px;
+    font-weight: 350;
+    font-style: inherit;
+    font-size: 18px;
+    background-color: white;
+    
+}
+
 .grid-card:hover {
     background: #f5f5f5;
+    background-color: #e6f3f8;
     box-shadow: 1px 8px 20px grey;
     cursor: pointer;
     -webkit-transition:  box-shadow .6s ease-in;
@@ -45,4 +56,35 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.set-background {
+    background-color: #A9CCCF;
+    margin: 0px 3px;
+    padding: 14px;
+    border-radius: 13px;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 
+    0px 4px 5px 0px rgb(0 0 0 / 14%), 
+    0px 1px 10px 0px rgb(0 0 0 / 12%);
+    color:azure;
+    font-weight: 700;
+}
+
+.custom-header {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ABC3CD;
+}
+
+
+main {
+    background-color: #f6fafa !important;
+}
+
+
+.set-position{
+    margin-top: -24px !important;
+    margin-bottom: -12px !important;
+    min-height: 100px !important;
+    max-height: 100px !important;
 }

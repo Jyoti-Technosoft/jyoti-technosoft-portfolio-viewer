@@ -15,19 +15,19 @@ import GridLayout from '../MainContentComponents/GridLayout'
 import HeaderBar from "../HeaderComponent/HeaderLayout"
 import Carousel from "../MainContentComponents/Carousel"
 import { useNavigate } from "react-router-dom";
-import { Routes, Route, Outlet, BrowserRouter } from 'react-router-dom';
-import {useParams, useLocation} from 'react-router-dom';
+import { Routes, Route, } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import portfolioData from "./portfolio.json";
 import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps }from '../../store/mapPropsToState';
-
+import Avatar from '@mui/material/Avatar';
+import "./sidebarStyle.scss"
 const drawerWidth = 240;
 function CombineSideBar(props) {
-  
+  const navigate = useNavigate();
   const [appData, setAppData] = React.useState(portfolioData);
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const [open, setOpen] = React.useState(true);
-  const { projectName } = useParams();
   const location = useLocation();
   const path = appData.ProgrammingLanguage.find(lang => lang?.name === location.pathname.split('/')[1])?.name;
   const selectedPath = path ? path : appData.ProgrammingLanguage[0].name;
@@ -54,7 +54,6 @@ function CombineSideBar(props) {
     props.setProjectListAction(appData?.Projects);
   },[appData])
 
-  const navigate = useNavigate();
 
   const toogleselected = (value) => {
     setOpen(!value)
@@ -78,7 +77,7 @@ function CombineSideBar(props) {
                     onClick={() => handleListItemClick(object.name, index)}
                 >
                   <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                    { <Avatar alt="Remy Sharp" src={object.image}/>}
                   </ListItemIcon>
                   <ListItemText primary={object.label} />
                 </ListItemButton>
