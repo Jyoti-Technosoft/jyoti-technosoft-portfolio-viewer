@@ -7,7 +7,8 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import AdbIcon from '@mui/icons-material/Adb';
-import "./headerStyle.scss"
+import "./headerStyle.scss";
+import logo from '../../assests/JTimg.png'
 
 function HeaderBar(props) {
   const toogleSideBar = () => {
@@ -28,7 +29,7 @@ function HeaderBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <img src={logo} className='customize-logo' width='10px'/>
           <Typography
             variant="h6"
             noWrap
