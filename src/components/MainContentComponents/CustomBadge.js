@@ -1,5 +1,6 @@
 import { Container } from "@mui/material"
 import * as React from 'react'
+import Tooltip from '@mui/material/Tooltip';
 
 function CustomBadge(props) {
     const [libraries, setLibraries] = React.useState([]);
@@ -18,7 +19,11 @@ function CustomBadge(props) {
     <div className="set-position">
         <Container sx={{ maxWidth: 'auto', spacing:0 }} className={cssClass}> { 
             libraries?.map((item, index) => {{
-                return <div className='set-background' sx={{width: "auto"}}>{item}</div>
+                return (<Tooltip  title={item} arrow>
+                            <div className='set-background' sx={{width: "auto"}}>
+                                {item}
+                            </div>
+                        </Tooltip>)
             }})
         }
         </Container>
