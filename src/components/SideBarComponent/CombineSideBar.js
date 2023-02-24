@@ -60,16 +60,16 @@ function CombineSideBar(props) {
 
   
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', backgroundColor: (theme) => theme.palette.background }}>
       <CssBaseline />
       <HeaderBar sidebar={open} handleListItemClick={toogleselected}  />
-      <Drawer sx={{ width: open ? drawerWidth : 0 , flexShrink: 0, [`& .MuiDrawer-paper`]: { width: open ? drawerWidth : 0, boxSizing: 'border-box' }, }}
+      <Drawer className="custom-drawer" sx={{ width: open ? drawerWidth : 0 , flexShrink: 0, [`& .MuiDrawer-paper`]: { width: open ? drawerWidth : 0, boxSizing: 'border-box' }, }}
         variant="persistent" anchor="left" open={open}>
         <Toolbar />
         <Box sx={{ overflow: 'auto' }}>
           <List>
             {appData.ProgrammingLanguage.map((object, index) => (
-              <ListItem key={object.name} disablePadding>
+              <ListItem key={object.name} disablePadding sx={{ backgroundColor: (theme) => { return theme.palette.primary} }}>
                 <ListItemButton
                     selected={selectedIndex === index}
                     onClick={() => handleListItemClick(object.name, index)}

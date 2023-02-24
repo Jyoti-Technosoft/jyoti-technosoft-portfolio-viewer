@@ -17,12 +17,12 @@ function CustomBadge(props) {
 
   return (
     <div className="set-position">
-        <Container sx={{ maxWidth: 'auto', spacing:0 }} className={cssClass}> { 
+        <Container sx={{ maxWidth: 'auto', spacing:0, color: (theme) => { return theme.palette.badge.color }}} className={cssClass}> { 
             libraries?.map((item, index) => {{
                 return (<Tooltip  title={item} arrow>
-                            <div className='set-background' sx={{width: "auto"}}>
+                            <Container className='set-background' sx={{width: "auto", backgroundColor: (theme) => { return theme.palette.badge.background }}}>
                                 {item}
-                            </div>
+                            </Container>
                         </Tooltip>)
             }})
         }

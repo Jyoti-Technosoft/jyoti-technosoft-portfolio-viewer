@@ -30,24 +30,24 @@ function Cards(props) {
   }
 
   return (
-    <Card sx={{ maxWidth: 430, minHeight: 500, maxHeight:500 }} className="grid-card" onClick={ () => { handleNext(pdetails) } } >
+    <Card sx={{ maxWidth: 430, minHeight: 500, maxHeight:500, backgroundColor:(theme) => { return theme.palette.card.background} }} className="grid-card" onClick={ () => { handleNext(pdetails) } } >
       <CardMedia
         sx={{ height: 250 }}
         image="https://picsum.photos/seed/picsum/200/300"
         title="green iguana"
       />
-      <CardContent sx={{ maxWidth: 430, minHeight: 140, maxHeight:140 }}>
+      <CardContent sx={{ maxWidth: 430, minHeight: 140, maxHeight:140, color:"text.secondary"}}>
         <Typography gutterBottom variant="h5" component="div">
           { pdetails?.projectName }
         </Typography>
-        <Typography className="align-text" variant="body2" color="text.primary">
+        <Typography className="align-text" variant="body2" color="text.secondary">
           { pdetails?.description }
         </Typography>
       </CardContent>
       <CustomBadge libraries={pdetails?.libraries} cssClass={'card-view'} />
       <CardActions>
-        <Button size="small" onClick={ (event) => { event.stopPropagation(); }}>Share</Button>
-        <Button size="small" onClick={ (event) => { openWebsites(event, pdetails?.websiteRefenceLink)}}>Visit site</Button>
+        <Button size="small" onClick={ (event) => { event.stopPropagation(); }} color="shareBtn">Share</Button>
+        <Button size="small" onClick={ (event) => { openWebsites(event, pdetails?.websiteRefenceLink)}} color="visitSiteBtn">Visit site</Button>
       </CardActions>
     </Card>
   );

@@ -16,7 +16,7 @@ function HeaderBar(props) {
   }
 
   return (
-    <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: '#61828A' }} >
+    <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }} >
       <Container maxWidth="xl" className='align-header'>
         <Toolbar disableGutters>
         <IconButton
