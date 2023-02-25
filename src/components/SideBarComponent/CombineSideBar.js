@@ -21,6 +21,7 @@ import { mapStateToProps, mapDispatchToProps }from '../../store/mapPropsToState'
 import Avatar from '@mui/material/Avatar';
 import "./sidebarStyle.scss"
 const drawerWidth = 240;
+
 function CombineSideBar(props) {
   const navigate = useNavigate();
   const [appData, setAppData] = React.useState(portfolioData);
@@ -28,6 +29,7 @@ function CombineSideBar(props) {
   const [open, setOpen] = React.useState(true);
   const location = useLocation();
   const path = appData.ProgrammingLanguage.find(lang => lang?.name === location.pathname.split('/')[1])?.name;
+  const projectName = location.pathname.split('/')[2] ? location.pathname.split('/')[2] : '';
   const selectedPath = path ? path : appData.ProgrammingLanguage[0].name;
   const [selectedLang, setSelectedLang] = React.useState(selectedPath);
 
@@ -45,7 +47,11 @@ function CombineSideBar(props) {
   },[selectedIndex])
 
   React.useEffect(() => {
-    navigate(`/${selectedLang}`);
+    navigate(`/${selectedLang}/${projectName}`);
+    if (projectName) {
+      const projectItem = props?.projectItem?.find((project) => (project?.language === selectedLang || selectedLang === 'all'))
+      props.setSelectedProjectAction(projectItem);
+    }
   },[selectedLang])
 
   React.useEffect(() => {
@@ -57,13 +63,12 @@ function CombineSideBar(props) {
     setOpen(!value)
   };
 
-
   
   return (
     <Box sx={{ display: 'flex', backgroundColor: (theme) => theme.palette.background }}>
       <CssBaseline />
       <HeaderBar sidebar={open} handleListItemClick={toogleselected}  />
-      <Drawer className="custom-drawer" sx={{ width: open ? drawerWidth : 0 , flexShrink: 0, [`& .MuiDrawer-paper`]: { width: open ? drawerWidth : 0, boxSizing: 'border-box' }, }}
+      <Drawer className="custom-drawer" sx={{ backgroundColor: (theme) => { return theme.palette.sidebar.background},  width: open ? drawerWidth : 0 , flexShrink: 0, [`& .MuiDrawer-paper`]: { width: open ? drawerWidth : 0, boxSizing: 'border-box' }, }}
         variant="persistent" anchor="left" open={open}>
         <Toolbar />
         <Box sx={{ overflow: 'auto' }}>
@@ -73,6 +78,7 @@ function CombineSideBar(props) {
                 <ListItemButton
                     selected={selectedIndex === index}
                     onClick={() => handleListItemClick(object.name, index)}
+                    // sx={{ backgroundColor: (theme) => {  return theme.palette.sidebar.selectedBtn; }}}
                 >
                   <ListItemIcon>
                     { <Avatar alt="Remy Sharp" src={object.image}/>}

@@ -42,6 +42,7 @@ function Carousel(props) {
       const data = props?.projectList?.find((item) => item?.projectName === projectName);
       if (data) {
         setSelectedProject(data);
+        props.setSelectedProjectAction(data);
       }
     }
   },[props.projectList]);

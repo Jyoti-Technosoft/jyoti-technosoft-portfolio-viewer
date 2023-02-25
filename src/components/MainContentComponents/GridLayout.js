@@ -30,7 +30,7 @@ function GridLayout(props) {
   }, [props.language])
 
   const loadProjects = (language) => {
-    let projects = props.projectItem.filter((project) => (project.language == language || language == 'all'));
+    let projects = props.projectItem.filter((project) => (project.language === language || language === 'all'));
     if (projects?.length > 6) {
       projects = projects.slice(0, 6);
     }
@@ -38,7 +38,7 @@ function GridLayout(props) {
   }
   
   const loadMoreProject = (visibleProjectIndex ) =>  {
-    let projects = props.projectItem.filter((project) => (project.language == language || props.language == 'all'));
+    let projects = props.projectItem.filter((project) => (project.language === language || props.language === 'all'));
     projects = projects.slice(0, (visibleProjectIndex+6));
     setProjectItem(projects)
   }
@@ -53,7 +53,7 @@ function GridLayout(props) {
         ))}
       </Grid>
       <div>
-         { projectItem.length < props.projectItem.filter((project) => (project.language == language || props.language == 'all'))?.length ? 
+         { projectItem.length < props.projectItem.filter((project) => (project.language === language || props.language === 'all'))?.length ? 
             <div className='load-button'>
               <Button variant="text" onClick={ () => { loadMoreProject(projectItem?.length) }}>load more</Button>
             </div> 

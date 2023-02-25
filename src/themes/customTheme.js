@@ -37,9 +37,6 @@ const defaultTheme = {
         background: '#ffffff'
       },
       background: '#f4f9fa',
-      sidebar: {
-        background: '#ffffff'
-      },
       badge: {
         background: '#dde7c1',
         color:'#2a9461'
