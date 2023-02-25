@@ -1,13 +1,14 @@
 import { createStore } from "redux";
-import rotateReducer from "../reducers/reducer";
+import reducer from "../reducers/reducer";
 
 const initialState = {
     selectedProject : undefined,
-    projectList : []
+    projectList : [],
+    isDarkTheme: false, 
 }
 
 function configureStore(state = initialState) {
-  return createStore(rotateReducer,state);
+  return createStore(reducer,state);
 }
 
 export default configureStore;

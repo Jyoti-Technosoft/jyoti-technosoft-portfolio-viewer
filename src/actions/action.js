@@ -15,4 +15,11 @@ export const setProjectListAction = (payload) => {
         type: "SET_PROJECT_LIST",
         payload: payload 
     }
+}
+
+export const switchTheme = (payload) => {
+    return {
+        type: "SWITCH_THEME",
+        payload: payload
+    }
 };

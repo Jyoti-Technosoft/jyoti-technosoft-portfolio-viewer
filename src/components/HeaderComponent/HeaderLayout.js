@@ -1,6 +1,5 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -9,10 +8,22 @@ import Container from '@mui/material/Container';
 import AdbIcon from '@mui/icons-material/Adb';
 import "./headerStyle.scss";
 import logo from '../../assests/JTimg.png'
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from '@mui/material/Switch';
+import { connect } from "react-redux";
+import { mapStateToProps, mapDispatchToProps } from '../../store/mapPropsToState';
+
 
 function HeaderBar(props) {
+  const [ theme, setTheme ] = React.useState(false);
   const toogleSideBar = () => {
     props.handleListItemClick(props.sidebar)
+  }
+
+  const switchTheme = () => {
+    props.switchTheme(!theme);
+    setTheme(!theme);
   }
 
   return (
@@ -67,13 +78,14 @@ function HeaderBar(props) {
           >
             JYOTI Technosoft
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            
-          </Box>
-
         </Toolbar>
+        <Container className="inner-container">
+          <FormGroup>
+            <FormControlLabel control={<Switch color="secondary" onChange={() => { switchTheme()} }/>} label="Dark Mode" labelPlacement="end"/>
+          </FormGroup>
+        </Container>
       </Container>
     </AppBar>
   );
 }
-export default HeaderBar;
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderBar);

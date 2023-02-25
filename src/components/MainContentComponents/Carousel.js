@@ -9,11 +9,10 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps }from '../../store/mapPropsToState';
-import {useParams, useLocation} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import CustomBadge from './CustomBadge';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 
@@ -33,7 +32,7 @@ function Carousel(props) {
 
 
   React.useEffect(() => {
-  const data = props.selectedProject
+    const data = props?.selectedProject
     setSelectedProject(data);
     setImages(data?.images)
   },[props.selectedProject]);
@@ -78,15 +77,13 @@ function Carousel(props) {
           onChangeIndex={handleStepChange}
           enableMouseEvents
         >
-          {images.map((step, index) => (
+          {images?.map((step, index) => (
             <div key={step.label}>
               {Math.abs(activeStep - index) <= 2 ? (
                 <>
                   <ImageListItemBar
                   sx={{
                     backgroundColor: '#98b2b7',
-                      // 'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-                      // 'rgba(97, 130, 138, 1) 70%, rgba(97, 160, 140, 1) 100%)',
                     position:'relative'
                     }}
                     title={step.label}

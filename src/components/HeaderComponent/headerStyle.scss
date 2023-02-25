@@ -1,3 +1,14 @@
 .align-header {
     margin-left: 20px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+
+.inner-container {
+    position: relative;
+    margin-top: 13px;
+    display: flex !important;
+    justify-content: end;
+    width: inherit;
 }

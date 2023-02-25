@@ -1,6 +1,4 @@
-import { createTheme } from '@mui/material/styles';
-
-const theme = createTheme({
+const defaultTheme = {
     palette: {
       primary: {
         main: "#2a9461"
@@ -45,9 +43,66 @@ const theme = createTheme({
       badge: {
         background: '#dde7c1',
         color:'#2a9461'
+      },
+      sidebar: {
+        background: '#ffffff'
       }
     },
-  });
+  };
 
 
-export default theme
+const darkTheme = {
+  palette: {
+    primary: {
+      main: "#262626"
+    },
+    secondary: {
+      main: "#7f7f7f"
+    },
+    sidebarColor: {
+      main: '#F0EEED'
+    },
+    primaryLight: {
+      main: "#112457",
+      contrastText: "#125487"
+    },
+    error: {
+      main: '#FF0000',
+    },
+    shareBtn: {
+      main: '#112468',
+    },
+    visitSiteBtn: {
+      main: '#112468',
+    },
+    info: {
+      main: '#FF0000',
+    },
+    success: {
+      main: '#FF0000',
+    },
+    text: {
+      primary: '#112457',
+      secondary: '#112468',
+      background: '#94C973'
+    },
+    card: {
+      background: '#f2f2f2'
+    },
+    background: '#d8d8d8',
+    sidebar: {
+      background: '#ffffff'
+    },
+    badge: {
+      background: '#262626',
+      color:'#ffffff'
+    },
+    sidebar: {
+      background: '#f2f2f2',
+      selectedBtn: '#ffffff'
+    }
+  },
+};
+
+
+export { darkTheme, defaultTheme } ;
