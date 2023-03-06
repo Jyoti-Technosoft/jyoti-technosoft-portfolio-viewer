@@ -21,7 +21,6 @@ import { mapStateToProps, mapDispatchToProps }from '../../store/mapPropsToState'
 import Avatar from '@mui/material/Avatar';
 import "./sidebarStyle.scss"
 import FooterLayout from '../FooterComponent/FooterLayout';
-import { red } from '@mui/material/colors';
 import { Container } from '@mui/system';
 const drawerWidth = 240;
 
