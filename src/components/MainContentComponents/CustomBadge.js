@@ -19,11 +19,13 @@ function CustomBadge(props) {
     <div className="set-position">
         <Container sx={{ maxWidth: 'auto', spacing:0, color: (theme) => { return theme.palette.badge.color }}} className={cssClass}> { 
             libraries?.map((item, index) => {{
+                if (index < 8 && cssClass !== 'carousel-view' || cssClass === 'carousel-view') {
                 return (<Tooltip  title={item} arrow>
-                            <Container className='set-background' sx={{width: "auto", backgroundColor: (theme) => { return theme.palette.badge.background }}}>
+                            <Container className='set-background text-wrapper' sx={{width: "100%", backgroundColor: (theme) => { return theme.palette.badge.background }}}>
                                 {item}
                             </Container>
                         </Tooltip>)
+                }
             }})
         }
         </Container>

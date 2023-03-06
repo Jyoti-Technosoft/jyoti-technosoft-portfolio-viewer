@@ -1,13 +1,12 @@
+@import './../../style.scss';
+
 .Mui-selected {
-    background-color: #ABC3CD !important;
     color: white !important;
-    // box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 
-    //             0px 4px 5px 0px rgb(0 0 0 / 14%), 
-    //             0px 1px 10px 0px rgb(0 0 0 / 12%);
+    
 }
 
+// drawer color
 .MuiDrawer-paper {
-    background-color: #DFE9EB !important;
     .MuiBox-root {
         .MuiList-root {
             padding-top: 0px !important;
@@ -43,20 +42,27 @@
     padding: 12px;
     padding-left: 12 !important;
     padding-right: 24px !important;
+    overflow: hidden;
+    grid-template-rows: minmax(30px, 0fr) minmax(10px, 0fr) minmax(0px, 0fr);
     .set-background {
-        background-color: #A9CCCF;
         margin: 0px 1px;
         border-radius: 12px;
         box-shadow: none !important;
-        color: azure;
         font-weight: 50;
         font-size: 14px;
         padding: 5px !important;
         height: 2rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 
 .customize-logo {
     margin-right: 14px;
     width: 2rem;
+}
+
+.custom-drawer {
+    background-color: va;
 }

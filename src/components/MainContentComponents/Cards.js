@@ -37,7 +37,7 @@ function Cards(props) {
         title="green iguana"
       />
       <CardContent sx={{ maxWidth: 430, minHeight: 140, maxHeight:140, color:"text.secondary"}}>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="div" className="text-wrapper">
           { pdetails?.projectName }
         </Typography>
         <Typography className="align-text" variant="body2" color="text.secondary">

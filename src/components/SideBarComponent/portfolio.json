@@ -7,10 +7,10 @@
     ],
     "Projects": [
         { "projectName": "ProgressMaker",
-          "description": "A project description is a high-level overview of why you A project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why you",
+          "description": "The ProgressMaker® generates real added value for teams and organizations - on a small and large scale. Functions, processes and data visualization are \"designed for enterprise progress\". In contrast to many other tools, the ProgressMaker® teams focuses on progress with state-of-the-art design (cooperation with the Fraunhofer Institute). And this is what makes the ProgressMaker® great:",
            "libraries":
            [
-            "ngrx", "rxjs", "ngxs", "D3.js", "bootstrap", "primeng", "synfusion", "jsonApiModal"
+            "ngrx", "rxjs", "ngxs", "D3.js", "bootstrap", "primeng", "synfusion", "jsonApiModal", "jsonApiModal", "jsonApiModal", "jsonApiModal", "jsonApiModal", "jsonApiModal"
            ],
            "backend": "Laravel",
            "database": "mySql",
@@ -33,7 +33,50 @@
         },
         { 
             "projectName": "PA2",
-            "description": "",
+            "description": "A project description is a high-level overview of why you A project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why you",
+            "libraries":
+            [
+            "ngrx", "rxjs", "ngxs", "Angular chart js", "primeng", "jsonApiModal"
+            ],
+            "backend": "Nodejs",
+            "database" : "mongoDB",
+            "images": [
+                "",
+                "",
+                ""
+            ],
+            "language": "angular",
+            "websiteRefenceLink": "" 
+        },
+        { 
+            "projectName": "ProgressMaker",
+            "description": "A project description is a high-level overview of why you A project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why you",
+            "libraries":
+            [
+            "ngrx", "rxjs", "ngxs", "D3.js", "bootstrap", "primeng", "synfusion", "jsonApiModal"
+            ],
+            "backend": "Laravel",
+            "database": "mySql",
+            "images": [
+                {
+                    "label": "Execution Element Dashboard",
+                    "imgPath": "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60"
+                },
+                {
+                    "label": "Performance Dashboard",
+                    "imgPath": "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60"
+                },
+                {
+                    "label": "Grid Card section",
+                    "imgPath": "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60"
+                }
+            ],
+            "language": "angular",
+            "websiteRefenceLink": "https://dev-wo.progressmaker.de" 
+            },
+            { 
+            "projectName": "PA2",
+            "description": "A project description is a high-level overview of why you A project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why you",
             "libraries":
             [
             "ngrx", "rxjs", "ngxs", "Angular chart js", "primeng", "jsonApiModal"
@@ -50,9 +93,16 @@
         },
         { 
             "projectName": "Enteros",
-            "description": "",
+            "description": "A project description is a high-level overview of why you A project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why you",
             "libraries":
-            [
+            [ 
+                "high-charts",
+                "web socket",
+                "spring boot framework",
+                "influxdb",
+                "Reactjs",
+                "grovey grails",
+                "mysql"
             ],
             "backend": "Nodejs",
             "database" : "mongoDB",
@@ -65,11 +115,14 @@
             "websiteRefenceLink": "" 
         },
         { 
-            "projectName": "PropertyVista",
-            "description": "",
+            "projectName": "Property Vista",
+            "description": "Property Vista's tenant portal connects you and your tenant seamlessly. This application is generally used for tenant communication and notification.",
             "libraries":
             [
-           
+                "GWT",
+                "Java",
+                "HTML",
+                "CSS"
             ],
             "backend": "Nodejs",
             "database" : "mongoDB",
@@ -83,10 +136,13 @@
         },
         {
             "projectName": "Jyoti Technosoft", 
-            "description": "",
+            "description": "A project description is a high-level overview of why you A project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why you",
             "libraries": 
             [
-          
+                "GWT",
+                "Java",
+                "HTML",
+                "CSS"
             ],
             "database" : "mongoDB",
             "images": [
@@ -99,7 +155,7 @@
         },
         {
             "projectName": "Jyoti Technosoft Consultant",              
-            "description": "",
+            "description": "A project description is a high-level overview of why you A project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why youA project description is a high-level overview of why you",
             "libraries": 
             [
                 "rxjs", "ngxs", "Angular chart js", "primeng", "jsonApiModal"

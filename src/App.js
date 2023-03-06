@@ -6,6 +6,8 @@ import { ThemeProvider } from '@mui/material/styles';
 import { createTheme } from '@mui/material/styles';
 import * as theme from './themes/customTheme';
 import * as React from "react";
+import CssBaseline from '@mui/material/CssBaseline';
+
 function App(props) {
 
   const [currentTheme, setCurrentTheme] = React.useState(theme.defaultTheme);
@@ -17,6 +19,7 @@ function App(props) {
 
   return (
     <ThemeProvider theme={createTheme(currentTheme)}>
+      <CssBaseline />
       <div className="App">
           <AppLayout/>
       </div>

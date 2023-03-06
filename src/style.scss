@@ -1,0 +1,10 @@
+$color-primary : #2a9461;
+$color-secondary : #dde7c1;
+
+.MuiAppBar-positionFixed {
+    z-index: 1400 !important;
+}
+
+.MuiDrawer-paperAnchorLeft {
+    z-index: 999 !important;
+}

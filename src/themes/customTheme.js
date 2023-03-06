@@ -97,7 +97,16 @@ const darkTheme = {
     sidebar: {
       background: '#f2f2f2',
       selectedBtn: '#ffffff'
-    }
+    },
+    components: {
+      MuiCssBaseline: {
+        styleOverrides: `
+        .Mui-selected {
+            background-color: black !important;
+          }
+        `,
+      },
+    },
   },
 };
 

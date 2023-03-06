@@ -26,9 +26,10 @@
 }
 
 .carousel-view {
-    display: flex !important;
-    flex-direction: row;
-    margin: 0px !important;
+    display: grid !important;
+    grid-template-columns: repeat(6, 15.2%);;
+    gap: 1em;
+    padding: 12px;
 }
 
 
@@ -68,6 +69,12 @@
     font-weight: 700;
 }
 
+.text-wrapper {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .custom-header {
     font-size: 24px;
     font-weight: 600;
@@ -75,13 +82,10 @@
 }
 
 
-
-
 .set-position{
     margin-top: -24px !important;
     margin-bottom: -12px !important;
     min-height: 100px !important;
-    max-height: 100px !important;
 }
 
 
@@ -111,6 +115,7 @@
 
 .main-container {
     min-height: 100vh;
+    padding-bottom: 0px !important;
 }
 
 .align-text {
@@ -121,4 +126,29 @@
 
 .load-button {
     margin-top: 10px;
+}
+
+.footer-wrapper{
+    background-color: #eee!important;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+    
+}
+.container{
+    color: rgb(59, 59, 59);
+}
+.btn-floating{
+    color: rgb(59, 59, 59);
+}
+body {
+    position: relative;
+    margin: 0;
+    min-height: 100%;
+}
+.main-wrapper{
+    padding-bottom: 110px;
 }

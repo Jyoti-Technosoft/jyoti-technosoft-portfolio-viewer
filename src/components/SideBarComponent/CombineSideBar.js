@@ -20,6 +20,9 @@ import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps }from '../../store/mapPropsToState';
 import Avatar from '@mui/material/Avatar';
 import "./sidebarStyle.scss"
+import FooterLayout from '../FooterComponent/FooterLayout';
+import { red } from '@mui/material/colors';
+import { Container } from '@mui/system';
 const drawerWidth = 240;
 
 function CombineSideBar(props) {
@@ -75,10 +78,20 @@ function CombineSideBar(props) {
           <List>
             {appData.ProgrammingLanguage.map((object, index) => (
               <ListItem key={object.name} disablePadding sx={{ backgroundColor: (theme) => { return theme.palette.primary} }}>
-                <ListItemButton
+                <ListItemButton 
                     selected={selectedIndex === index}
                     onClick={() => handleListItemClick(object.name, index)}
-                    // sx={{ backgroundColor: (theme) => {  return theme.palette.sidebar.selectedBtn; }}}
+                    sx={{
+                      // backgroundColor: (theme) => {
+                      //   if (selectedIndex === index) {
+                      //    console.log(selectedIndex)
+                      //    console.log(theme?.palette.primary.main)
+                      //    return theme?.palette.secondary.main;
+                      //  }
+                      //   return theme?.palette.secondary.main;
+                    // }
+                  }
+                  }
                 >
                   <ListItemIcon>
                     { <Avatar alt="Remy Sharp" src={object.image}/>}
@@ -91,11 +104,15 @@ function CombineSideBar(props) {
         </Box>
       </Drawer>
       <Box className="main-container" component="main" sx={{ flexGrow: 1, p: 3, maxWidth: `100%`,}}>
+        <Container className="main-wrapper">
         <Toolbar />
           <Routes>
               <Route exact path={selectedLang} element={<GridLayout  language = {selectedLang}  projectItem = {appData.Projects} />} />
               <Route exact path={`/${selectedLang}/:projectName`} element={<Carousel  language = {selectedLang}  projectItem = {appData.Projects} />} />
           </Routes>
+          </Container>
+        <FooterLayout/>
+
       </Box>
     </Box>
   );
