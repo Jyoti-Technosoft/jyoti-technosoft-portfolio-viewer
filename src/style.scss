@@ -12,3 +12,15 @@ $color-secondary : #dde7c1;
 .custom-drawer {
     z-index: 999 !important;
 }
+
+@media only screen and (min-width: 1536px) {
+    .css-19r6kue-MuiContainer-root {
+        max-width: 100% !important;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .css-1oqqzyl-MuiContainer-root {
+        max-width: 100% !important;
+    }
+}
